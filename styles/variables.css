@@ -1,1 +1,11 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --main-font: Inter-Variable, Arial, Helvetica, sans-serif;
+    --accent-font: PressStart2P-Regular, Arial, Helvetica, sans-serif;
+    --card-text-font-weight: 700;
+    --card-heading-font-weight: 400;
+    --contour-color: #0000;
+    --sparks-color: #FF0000;
+    --element-border: 2px solid #0000;
+}
