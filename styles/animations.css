@@ -20,7 +20,7 @@
   }
   
   @keyframes sparks-opacity {
-    from{
+    from {
       opacity: 0;
     }
     to {

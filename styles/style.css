@@ -10,8 +10,6 @@
 
 */
 
-
-
 .page {
   display: grid;
   place-items: center;
@@ -20,10 +18,13 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font);
-  background-image:  
-    repeating-linear-gradient(to right, transparent 0 2px, #d3d3d3 2px 4px),
+  background-image: repeating-linear-gradient(
+      to right,
+      transparent 0 2px,
+      #d3d3d3 2px 4px
+    ),
     repeating-linear-gradient(to bottom, transparent 0 2px, #d3d3d3 2px 4px),
-    linear-gradient(#e7e7e7 0%, #e7e7e7  0.01%, #1a1a1a);
+    linear-gradient(#e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -33,22 +34,20 @@
   grid-template-columns: 1fr;
   max-inline-size: 696px;
   padding: 128px 120.5px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin: 0 auto;
   border: var(--element-border);
   margin-block-start: 102px;
   margin-block-end: 100px;
   gap: 20px;
-  
 }
 
 .heading {
-font-family: var(--accent-font);
-font-weight: 400;
-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-line-height: 65px;
-text-transform: uppercase;
-
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 65px;
+  text-transform: uppercase;
 }
 
 .subheading {
@@ -69,8 +68,8 @@ text-transform: uppercase;
 }
 
 .card {
-  position:relative;
-  background-color: #FFFFFF;
+  position: relative;
+  background-color: #ffffff;
   padding-bottom: 25px;
   border: var(--element-border);
 }
@@ -83,9 +82,8 @@ text-transform: uppercase;
   font-variation-settings: "wght" 700;
   font-size: 18px;
   line-height: 21.78px;
- 
+
   padding: 3px 10px;
-  
 }
 
 .card-text {
@@ -94,7 +92,6 @@ text-transform: uppercase;
   font-size: 18px;
   line-height: 21px;
   padding: 25px;
-  
 }
 
 .card-watermark {
@@ -102,7 +99,7 @@ text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
-  text-shadow: 1px 0px #ffffff, 1px 0px #ffffff ;
+  text-shadow: 1px 0px #ffffff, 1px 0px #ffffff;
   position: absolute;
   top: 58px;
   right: 25px;
@@ -114,7 +111,7 @@ text-transform: uppercase;
   text-transform: uppercase;
 }
 
-@supports((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)){
+@supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
   .card-watermark {
     text-stroke: 1px #ffffff;
     -webkit-text-stroke: 1px #ffffff;
@@ -124,9 +121,8 @@ text-transform: uppercase;
 
 .card-text-container {
   display: grid;
-  grid-template-rows: min-content;  
+  grid-template-rows: min-content;
 }
-
 
 /* стили для кнопок */
 .button {
@@ -150,14 +146,12 @@ text-transform: uppercase;
 }
 
 .button:hover::before {
-  translate: 0%;  
+  translate: 0%;
 }
-
 
 .card__like-button {
   width: 130px;
   height: 38px;
-  
   position: relative;
   cursor: pointer;
   display: flex;
@@ -167,7 +161,6 @@ text-transform: uppercase;
   overflow: hidden;
 }
 
-
 .button__text {
   position: relative;
   font-family: var(--accent-font);
@@ -175,7 +168,6 @@ text-transform: uppercase;
   font-size: 14px;
   line-height: 12.6px;
   mix-blend-mode: difference;
-
 }
 
 .card-buttons-container {
@@ -245,8 +237,7 @@ text-transform: uppercase;
 
 /* Стили для блока footer */
 
-
-  .save-button-wrapper {
+.save-button-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -257,7 +248,7 @@ text-transform: uppercase;
 .save-button {
   padding-top: 18.5px;
   padding-bottom: 18.5px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   inline-size: 335px;
   block-size: 55px;
   display: flex;
@@ -272,11 +263,7 @@ text-transform: uppercase;
   color: white;
   position: relative;
   mix-blend-mode: difference;
-  
 }
-
-
-
 
 .dialog {
   border: var(--element-border);
@@ -296,7 +283,7 @@ text-transform: uppercase;
   flex-shrink: 0;
   align-self: center;
   inline-size: 39px;
-  block-size: 39px; 
+  block-size: 39px;
 }
 
 .dialog-wrapper {
@@ -314,15 +301,13 @@ text-transform: uppercase;
   font-size: 14px;
   line-height: 21px;
   color: white;
-  mix-blend-mode: difference; 
+  mix-blend-mode: difference;
 }
-
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 1);
   opacity: 75%;
 }
-
 
 /* Анимация сердца */
 
@@ -347,7 +332,7 @@ dialog::backdrop {
 
 .like-icon:hover .core {
   fill: black;
-  transition: fill 0.3s linear; 
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
@@ -357,7 +342,7 @@ dialog::backdrop {
 
 .like-icon:active .core {
   fill: red;
-  transition: fill 0.3s linear; 
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
@@ -367,7 +352,7 @@ dialog::backdrop {
 
 .like-icon.is-liked .core {
   fill: red;
-  transition: fill 0.3s linear; 
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
@@ -400,6 +385,4 @@ dialog::backdrop {
   .popup-button {
     inline-size: 257px;
   }
-
-  
 }
