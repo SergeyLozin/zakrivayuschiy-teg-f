@@ -10,29 +10,15 @@
 
 */
 
-@keyframes heart-scale {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.25);
-  }
-}
 
-@keyframes sparks-opacity {
-  from{
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 .page {
+  display: grid;
+  place-items: center;
+  padding-block-start: 100px;
+  padding-block-end: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  
-  
   font-family: var(--main-font);
   background-image:  
     repeating-linear-gradient(to right, transparent 0 2px, #d3d3d3 2px 4px),
@@ -50,8 +36,8 @@
   background-color: #FFFFFF;
   margin: 0 auto;
   border: var(--element-border);
-  margin-top: 102px;
-  margin-bottom: 100px;
+  margin-block-start: 102px;
+  margin-block-end: 100px;
   gap: 20px;
   
 }
@@ -86,6 +72,7 @@ text-transform: uppercase;
   position:relative;
   background-color: #FFFFFF;
   padding-bottom: 25px;
+  border: var(--element-border);
 }
 .card-image {
   inline-size: 100%;
@@ -93,17 +80,17 @@ text-transform: uppercase;
 
 .card-heading {
   font-family: var(--main-font);
-  font-weight: 700;
+  font-variation-settings: "wght" 700;
   font-size: 18px;
   line-height: 21.78px;
-  border: var(--element-border);
+ 
   padding: 3px 10px;
   
 }
 
 .card-text {
   font-family: var(--main-font);
-  font-weight: 400;
+  font-variation-settings: "wght" 400;
   font-size: 18px;
   line-height: 21px;
   padding: 25px;
@@ -115,11 +102,12 @@ text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
-  text-shadow: 0 0 1px #ffffff;
+  text-shadow: 1px 0px #ffffff, 1px 0px #ffffff ;
   position: absolute;
   top: 58px;
   right: 25px;
   mix-blend-mode: hard-light;
+  opacity: 50%;
 }
 
 .text-uppercase {
@@ -136,7 +124,7 @@ text-transform: uppercase;
 
 .card-text-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;  
+  grid-template-rows: min-content;  
 }
 
 
@@ -145,24 +133,13 @@ text-transform: uppercase;
   font-family: var(--accent-font);
   background-color: transparent;
   border: var(--element-border);
-}
-
-.card__like-button {
-  width: 130px;
-  height: 38px;
-  
-  color: black;
-  background-color: transparent;
+  color: white;
   position: relative;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   overflow: hidden;
 }
 
-.card__like-button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -172,13 +149,24 @@ text-transform: uppercase;
   translate: -100%;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
   translate: 0%;  
 }
 
-.card__like-button:hover .button__text {
-  color: white;
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
 }
+
 
 .button__text {
   position: relative;
@@ -186,6 +174,8 @@ text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   line-height: 12.6px;
+  mix-blend-mode: difference;
+
 }
 
 .card-buttons-container {
@@ -218,6 +208,8 @@ text-transform: uppercase;
   border: var(--element-border);
   transition-timing-function: 0.3s ease;
 }
+
+/* Фильтры картинок */
 
 .image-bright {
   filter: brightness(50%);
@@ -253,12 +245,8 @@ text-transform: uppercase;
 
 /* Стили для блока footer */
 
-.footer {
-  max-inline-size: 696px;
-  margin: 0 auto;
-}
 
-.footer-button-wrapper {
+  .save-button-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -278,25 +266,46 @@ text-transform: uppercase;
   align-items: center;
 }
 
-.popup {
+.floppy-icon {
+  width: 21px;
+  height: 21px;
+  color: white;
+  position: relative;
+  mix-blend-mode: difference;
+  
+}
+
+
+
+
+.dialog {
+  border: var(--element-border);
+  padding: 30px 42px;
   max-inline-size: 353px;
-  max-block-size: 191px;
-  padding: 30px;
+}
+
+.dialog[open] {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-}
-
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 1);
-  opacity: 75%;
-}
-
-.popup-container {
-  display: flex;
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  row-gap: 30px;
+}
+
+.popup-icon {
+  flex-shrink: 0;
+  align-self: center;
+  inline-size: 39px;
+  block-size: 39px; 
+}
+
+.dialog-wrapper {
+  display: flex;
+  column-gap: 20px;
+}
+
+.popup-button {
+  inline-size: 100%;
 }
 
 .popup-button-text {
@@ -304,18 +313,16 @@ dialog::backdrop {
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
+  color: white;
+  mix-blend-mode: difference; 
 }
 
-.popup-button {
-  inline-size: 293px;
-  block-size: 38px;
-  
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 75%;
 }
 
-.popup-icon {
-  inline-size: 39px;
-  block-size: 39px;
-}
 
 /* Анимация сердца */
 
