@@ -3,9 +3,11 @@
 :root {
     --main-font: Inter-Variable, Arial, Helvetica, sans-serif;
     --accent-font: PressStart2P, Arial, Helvetica, sans-serif;
-    --card-text-font-weight: 700;
-    --card-heading-font-weight: 400;
+    --card-text-font-weight: 400;
+    --card-heading-font-weight: 700;
     --contour-color: #0000;
     --sparks-color: #FF0000;
     --element-border: 2px solid #000000;
+    --button-box-shadow: 2px 2px 0 #000;
+    
 }

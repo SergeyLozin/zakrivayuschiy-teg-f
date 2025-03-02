@@ -15,8 +15,10 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="heading">&lt;/html&gt;</h1>
-      <p class="subheading">закрывающий тег</p>
+      <div class="header-wrapper">
+        <h1 class="heading">&lt;/html&gt;</h1>
+        <p class="subheading">закрывающий тег</p>
+      </div>
     </header>
     <main class="main">
       <section class="card">
@@ -29,7 +31,7 @@
             src="images/post1-image.png"
             alt="яркая картинка автобуса"
           />
-          <p class="card-watermark">&lt;/html&gt;</p>
+          <p class="card-watermark text-uppercase">&lt;/html&gt;</p>
         </div>
         <div class="card-text-container">
           <p class="card-text">
@@ -539,7 +541,7 @@
           <svg class="floppy-icon" viewBox="0 0 40 40">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <p class="button__text">Сохранить на память</p>
+          <span class="button__text">Сохранить на память</span>
         </button>
 
         <dialog id="dialog" class="dialog">
