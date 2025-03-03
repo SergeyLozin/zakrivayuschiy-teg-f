@@ -1,3 +1,4 @@
+
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -37,7 +38,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 323px;
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
     clamp(0.875rem, -1.4687rem + 9.9996vw, 7.531rem);
   gap: 20px;
@@ -193,6 +193,7 @@
   border: none;
   background-color: transparent;
   block-size: 38px;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -269,8 +270,8 @@
 
 .dialog {
   border: var(--element-border);
-  padding: 30px 42px;
-  max-inline-size: 353px;
+  padding: 30px;
+  max-inline-size: 357px;
 }
 
 .dialog[open] {
@@ -295,6 +296,8 @@
 
 .popup-button {
   inline-size: 100%;
+  block-size: 38px;
+  
 }
 
 .popup-button-text {
